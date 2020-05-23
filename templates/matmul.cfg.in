@@ -1,0 +1,63 @@
+// Tests zsim hooks for different programming languages To build tests, run
+// make -j -C misc/hooks You can run the real tests with make -C misc/hooks
+// run_tests This uses logToFile because some JVMs need transparency (they fork
+// and use pipes, and writing to stdout/stderr breaks those pipes)
+
+sys = {
+    cores = {
+        c = {
+            cores = {num_cores};
+            dcache = "l1d";
+            icache = "l1i";
+        };
+    };
+
+    lineSize = 64;
+
+    caches = {
+        l1d = {
+            caches = {num_cores};
+            size = {l1d_size};
+            latency = 4;
+            isPrefetcher = {prefetcher};
+        };
+
+        l1i = {
+            caches = {num_cores};
+            size = {l1i_size};
+            latency = 3;
+        };
+
+        l2 = {
+            caches = {num_cores};
+            size = {l2_size};
+            children = "l1d|l1i";
+        };
+
+        l3 = {
+            caches = 1;
+            size = {l3_size};
+            latency = 27;
+            children = "l2";
+
+        };
+    };
+
+    frequency = 2270;
+    mem = {
+        type = "MD1";
+        controllers = 1;
+        bandwidth = {peak_bw};
+    };
+};
+
+sim = {
+    logToFile = true;
+    phaseLength = 1000;
+    printHierarchy = true;
+};
+
+process0 = {
+    command = "naive-matmul {num_cores} {mat_size}";
+    startFastForwarded = False;
+};

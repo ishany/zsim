@@ -1,0 +1,4 @@
+command = "/home/ishan/Downloads/parsec-3.0/pkgs/apps/swaptions/inst/amd64-linux.gcc/bin/swaptions -ns 16 -sm 100 -nt 4 -sd 10";
+command = "/home/ishan/Downloads/parsec-3.0/pkgs/apps/blackscholes/inst/amd64-linux.gcc/bin/blackscholes 4 /home/ishan/Downloads/parsec-3.0/pkgs/apps/blackscholes/inst/amd64-linux.gcc/bin/in_4K.txt out.txt";
+command = "/home/ishan/Downloads/parsec-3.0/pkgs/apps/freqmine/inst/amd64-linux.gcc/bin/freqmine /home/ishan/Downloads/parsec-3.0/pkgs/apps/freqmine/inst/amd64-linux.gcc/bin/T10I4D100K_3.dat 0";
+command = "/home/ishan/Downloads/parsec-3.0/pkgs/apps/fluidanimate/inst/amd64-linux.gcc/bin/fluidanimate 4 10 /home/ishan/Downloads/parsec-3.0/pkgs/apps/fluidanimate/inst/amd64-linux.gcc/bin/in_5K.fluid";
