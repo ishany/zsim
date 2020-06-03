@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 zsim2: Electric Boogaloo
 ====
 
@@ -13,3 +14,6 @@ What is this? It's like Zsim, but actually has installation steps and usage for 
 5. scons -jN
 6. ./build/opt/zsim tests/simple.cfg
 
+=======
+# zsim
+>>>>>>> 2101c1cfb5c2f0c32b3c0f4439fbc02242389bd5
